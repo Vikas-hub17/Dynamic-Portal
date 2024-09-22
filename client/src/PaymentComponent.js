@@ -5,7 +5,7 @@ import CheckoutForm from './CheckoutForm';
 import './App.css';
 
 
-const stripePromise = loadStripe('your-publishable-key');
+const stripePromise = loadStripe('pk_test_51Q1iVLP9a80OPGd0wMFAlGgsY9S5Kcfhc4TAHS4mKp4Jd0cDe5cTvyw5cshLGdS9jdW8QqrWrKjFTFFk65rRaCPK00mb0pfdoI');
 
 const PaymentComponent = () => {
   return (
