@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const stripe = require('stripe')('your-secret-key'); // Replace with your actual Stripe secret key
+const stripe = require('stripe')('sk_test_51Q1iVLP9a80OPGd09wSix49j9lDvzPHCj5NAQpX8fWcjBTahRxMCmkp3OKtJ3cdsJ8MQb6NrIgqkw7q9TiCIYrFF00BKrFYLi0'); // Replace with your actual Stripe secret key
 
 const app = express();
 
@@ -47,7 +47,7 @@ app.post('/create-checkout-session', async (req, res) => {
 // Google reCAPTCHA Form Submission API
 app.post('/submit-form', async (req, res) => {
   const token = req.body['g-recaptcha-response'];
-  const secretKey = 'your-secret-key'; // Replace with your actual reCAPTCHA secret key
+  const secretKey = '6LeRkUsqAAAAADWRc3RLFj-wA-RHqvZtY7SEOUNm'; // Replace with your actual reCAPTCHA secret key
 
   const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
 
