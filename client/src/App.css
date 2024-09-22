@@ -1,9 +1,8 @@
-/* App.css */
 
 /* General Styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f7fa;
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec); /* Gradient background */
   margin: 0;
   padding: 0;
   display: flex;
@@ -11,17 +10,17 @@ body {
   align-items: center;
   height: 100vh;
   color: #333;
+  padding: 20px;
 }
 
 .container {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  max-width: 900px;
+  padding: 40px; /* Increase padding for spaciousness */
+  max-width: 800px; /* Limit max width for better readability */
   width: 100%;
-  margin: 20px;
-  text-align: center;
+  margin: auto; /* Center the container */
 }
 
 /* Header Styling */
@@ -30,6 +29,7 @@ h1 {
   margin-bottom: 30px;
   color: #3a3a3a;
   font-weight: 600;
+  text-align: center; /* Centered header */
 }
 
 /* Paragraph Styling */
@@ -38,15 +38,21 @@ p {
   line-height: 1.6;
   color: #555;
   margin-bottom: 20px;
+  text-align: center; /* Centered text */
 }
 
 /* Box Styling (Weather, Payment, Contact) */
 .weather-box, .payment-box, .contact-box {
-  padding: 25px;
+  padding: 30px; /* Increased padding for better space */
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 40px; /* More space between boxes */
   background-color: #eef2f9;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.weather-box:hover, .payment-box:hover, .contact-box:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
 }
 
 /* Weather Component */
@@ -60,27 +66,24 @@ p {
   font-weight: 500;
 }
 
-/* Payment Form Styling */
-.payment-box h1 {
-  font-size: 24px;
-  color: #28a745;
-  margin-bottom: 20px;
-}
-
+/* Button Styling */
 button {
-  padding: 12px 20px;
+  padding: 12px 24px; /* Increased padding for button */
   background-color: #007bff;
   border: none;
   border-radius: 8px;
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition for scaling */
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  display: block; /* Centering button */
+  margin: 20px auto; /* Centering button */
 }
 
 button:hover {
   background-color: #0056b3;
+  transform: scale(1.05); /* Slightly larger on hover */
 }
 
 button:disabled {
@@ -89,7 +92,7 @@ button:disabled {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px; /* Increased margin for form groups */
   text-align: left;
 }
 
@@ -114,9 +117,10 @@ input, .StripeElement {
   margin: 20px 0;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 20px;
+    padding: 20px; /* Adjust padding for smaller screens */
     margin: 10px;
   }
 
@@ -125,11 +129,58 @@ input, .StripeElement {
   }
 
   .weather-box, .payment-box, .contact-box {
-    padding: 20px;
+    padding: 25px; /* Adjust padding for smaller screens */
   }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Apply fade-in animation to the main content box */
+.main-content-box {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  animation: fadeIn 0.6s ease; /* Add animation here */
+}
+
+/* Button Styling */
+button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Add box-shadow transition */
+  display: block;
+  margin: 20px auto;
 }
 
 button:hover {
   background-color: #0056b3;
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+  transform: scale(1.05); /* Slightly larger on hover */
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Fade-in effect for weather data */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards; /* Use fadeIn animation */
+}
+
+* {
+  transition: all 0.3s ease; /* Smooth transitions for all elements */
 }

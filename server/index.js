@@ -15,13 +15,21 @@ app.use(bodyParser.json()); // Parse JSON bodies for POST requests
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Simulated Weather Data API
+// Simulated Weather Data API
 app.get('/api/weather', (req, res) => {
-  const weatherData = {
-    city: 'New York',
-    temperature: 25,
-  };
-  res.json(weatherData);
+  const weatherData = [
+    { city: 'New York', temperature: Math.floor(Math.random() * 30) + 1 },
+    { city: 'London', temperature: Math.floor(Math.random() * 30) + 1 },
+    { city: 'Tokyo', temperature: Math.floor(Math.random() * 30) + 1 },
+    { city: 'Sydney', temperature: Math.floor(Math.random() * 30) + 1 },
+    { city: 'Cape Town', temperature: Math.floor(Math.random() * 30) + 1 },
+  ];
+
+  // Select a random weather data entry
+  const randomWeather = weatherData[Math.floor(Math.random() * weatherData.length)];
+  res.json(randomWeather);
 });
+
 
 // Stripe Payment Gateway API
 app.post('/create-checkout-session', async (req, res) => {
