@@ -21,6 +21,11 @@ body {
   max-width: 800px; /* Limit max width for better readability */
   width: 100%;
   margin: auto; /* Center the container */
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
+  gap: 20px; /* Space between the columns */
+  padding: 40px;
+  max-width: 1200px; /* Optional: limit max width for better layout */
 }
 
 /* Header Styling */
@@ -49,6 +54,13 @@ p {
   background-color: #eef2f9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease; /* Smooth hover effect */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Stack columns on small screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
 }
 
 .weather-box:hover, .payment-box:hover, .contact-box:hover {
